@@ -1,0 +1,3 @@
+Para ejecutar este proyecto se necesita crear un entorno virtual. Yo usé Conda, se incluye las librerias y dependencias en conda_requirements.txt. Hay que asegurarse de tener ciertas librerías de DBT compatibles. Hay que echar un ojo especialmente a dbtsql. Esta llega tan solo hasta 1.7 pero dbtsnowflake llega hasta 1.9 lo que crea conflictos porque con 1.9 descarga una versión incompatible de Pandas. 
+Para correr la primera tuberia hay como ejecutarla desde la sección de código sin ningún problema. Para la segunda tubería, al menos en mi computadora, es más sencillo hacerlo a través de un trigger. Correrla desde la sección de código hace que mi RAM se llene y la tubería deje de funcionar.
+Para correr jupyter y python no hay mayor lío si se utilizó el entorno de Conda

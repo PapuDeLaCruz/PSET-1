@@ -1,0 +1,76 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - transformer_raw_to_clean
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: raw->clean
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: raw__clean
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - exporter_raw_to_clean
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: transformer_raw_to_clean
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - raw__clean
+  uuid: transformer_raw_to_clean
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: exporter raw to clean
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - transformer_raw_to_clean
+  uuid: exporter_raw_to_clean
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2025-02-05 20:34:29.287307+00:00'
+data_integration: null
+description: Takes 5 tables from Snowflake and it cleans them following the EDA, then
+  it uploads them to the clean schema in Snowflake
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: raw_to_clean
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags:
+- Snowflae
+type: python
+uuid: raw_to_clean
+variables_dir: /home/papudelacruz/.mage_data/personal-data-engine
+widgets: []
